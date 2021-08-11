@@ -9,9 +9,9 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import dash_table_experiments as dt
-import webbrowser
 from PIL import Image
 import requests
+import gunicorn
 
 # Define popup
 encoded = base64.b64encode(requests.get('https://gamingtrend.com/wp-content/uploads/2020/05/feature-2-e1589992535441.jpg', stream=True).raw.read())
