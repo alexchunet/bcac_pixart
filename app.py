@@ -50,6 +50,7 @@ title_html = '''
 m.get_root().html.add_child(folium.Element(title_html))
 html_string = m.get_root().render()
 
+import dash_html_components as html
 app = dash.Dash(__name__)
 app.layout = html.Div(style={
     #'background-image': 'url("assets/pic.png")',
