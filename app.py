@@ -60,7 +60,7 @@ app.layout = html.Div(style={
     'background-repeat': 'no-repeat',
     'background-position': 'top',
     'background-size': '150px 100px',
-    'margin':0},
+    'margin':'0'},
     children=[html.Iframe(id = 'map', srcDoc = html_string, width='100%', height='900')])
 
 if __name__ == '__main__':
