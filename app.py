@@ -52,6 +52,8 @@ html_string = m.get_root().render()
 
 import dash_html_components as html
 app = dash.Dash(__name__)
+server = app.server
+
 app.layout = html.Div(style={
     #'background-image': 'url("assets/pic.png")',
     'backgroundColor' : 'grey',
