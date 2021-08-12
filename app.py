@@ -15,13 +15,14 @@ import gunicorn
 import geopandas as gpd
 
 # Define popup images
-encoded = base64.b64encode(requests.get('https://gamingtrend.com/wp-content/uploads/2020/05/feature-2-e1589992535441.jpg', stream=True).raw.read())
-html = '<img src="data:image/png;base64,{}">'.format
+pic1 = base64.b64encode(requests.get('https://static.wixstatic.com/media/c2c01a_059a6f6ff779483d92e163c445931bc2~mv2_d_1536_1536_s_2.png/v1/fill/w_1052,h_1052,al_c,q_90,usm_0.66_1.00_0.01/c2c01a_059a6f6ff779483d92e163c445931bc2~mv2_d_1536_1536_s_2.webp', stream=True).raw.read())
+pic2 = base64.b64encode(requests.get('https://static.wixstatic.com/media/c2c01a_38f12a7fdf5243fcb9ef129718cfca8f~mv2_d_1280_1280_s_2.png/v1/fill/w_1052,h_1052,al_c,q_90,usm_0.66_1.00_0.01/c2c01a_38f12a7fdf5243fcb9ef129718cfca8f~mv2_d_1280_1280_s_2.webp', stream=True).raw.read())
+pic3 = base64.b64encode(requests.get('https://static.wixstatic.com/media/c2c01a_a24481cf492e4393a62b6cbc1a7d9749~mv2_d_1536_1536_s_2.png/v1/fill/w_1052,h_1052,al_c,q_90,usm_0.66_1.00_0.01/c2c01a_a24481cf492e4393a62b6cbc1a7d9749~mv2_d_1536_1536_s_2.webp', stream=True).raw.read())
+html = '<img src="data:image/png;base64,{}" style="width:100%; height:100%;">'.format
 
-iframe = IFrame(html(encoded.decode('UTF-8')), width=200, height=200)
-popup1 = folium.Popup(iframe, max_width=250)
-popup2 = folium.Popup(iframe, max_width=250)
-popup3 = folium.Popup(iframe, max_width=250)
+popup1 = folium.Popup(IFrame(html(pic1.decode('UTF-8')), width=200, height=200), max_width=250)
+popup2 = folium.Popup(IFrame(html(pic2.decode('UTF-8')), width=200, height=200), max_width=250)
+popup3 = folium.Popup(IFrame(html(pic3.decode('UTF-8')), width=200, height=200), max_width=250)
 
 # Define stops
 cities = [dict(name="Paris - Ile de la cité", lat=48.8534, lon=2.3488, popup=popup1, color='gray'),
