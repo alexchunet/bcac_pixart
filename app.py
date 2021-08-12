@@ -6,6 +6,7 @@ import base64
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import dash_table_experiments as dt
@@ -61,15 +62,15 @@ html_string = m.get_root().render()
 
 # Configure and run app
 import dash_html_components as html
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 server = app.server
 
 app.layout = html.Div(style={
     #'background-image': 'url("assets/pic.png")',
-    'backgroundColor' : 'grey',
-    'background-repeat': 'no-repeat',
-    'background-position': 'top',
-    'background-size': '150px 100px',
+    #'backgroundColor' : 'grey',
+    #'background-repeat': 'no-repeat',
+    #'background-position': 'top',
+    #'background-size': '150px 100px',
     'margin': '0'},
     children=[html.Iframe(id = 'map', srcDoc = html_string, width='100%', height='900')])
 
