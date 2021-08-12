@@ -54,7 +54,7 @@ for i in range(0,len(paths)):
 # Add title
 loc = '<br>Fantastic Urban Life Series'
 title_html = '''
-             <h3 align="center" style="font-size:30px; color: white; background-size : 600px 300px ; background-image: url('https://c4.wallpaperflare.com/wallpaper/131/578/547/pixel-art-town-city-waneella-hd-wallpaper-preview.jpg'); margin : 0; height: 90px"><b>{}</b></h3>
+             <h3 align="center" style="font-family: Gill Sans; font-size:30px; color: black; -webkit-text-stroke: 1px white; text-shadow: 1px 1px 3px white; background-size : 1000px 300px ; background-image: url('https://c4.wallpaperflare.com/wallpaper/131/578/547/pixel-art-town-city-waneella-hd-wallpaper-preview.jpg'); margin : 0; height: 90px"><b>{}</b></h3>
              '''.format(loc)   
 
 m.get_root().html.add_child(folium.Element(title_html))
