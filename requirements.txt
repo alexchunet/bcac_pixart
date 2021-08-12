@@ -4,8 +4,8 @@ dash
 dash_core_components
 dash_html_components
 dash_table_experiments
+dash_bootstrap_components
 pillow
 requests
 gunicorn
 geopandas
-dash_bootstrap_components
