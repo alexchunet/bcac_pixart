@@ -12,6 +12,7 @@ import dash_table_experiments as dt
 from PIL import Image
 import requests
 import gunicorn
+import geopandas as gpd
 
 # Define popup
 encoded = base64.b64encode(requests.get('https://gamingtrend.com/wp-content/uploads/2020/05/feature-2-e1589992535441.jpg', stream=True).raw.read())
