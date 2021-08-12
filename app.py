@@ -27,19 +27,19 @@ iframe3 = IFrame(html(encoded.decode('UTF-8')), width=200, height=200)
 popup3 = folium.Popup(iframe3, max_width=250)
 
 # Assets
-cities = [dict(name="Aalborg", lat=57.0268172, lon=9.837735, popup=popup1),
-          dict(name="Aarhus", lat=56.1780842, lon=10.1119354, popup=popup2),
-          dict(name="Copenhagen", lat=55.6712474, lon=12.5237848, popup=popup3)]
+cities = [dict(name="Paris - Ile de la cité", lat=48.8534, lon=2.3488, popup=popup1, color='gray'),
+          dict(name="Arles", lat=43.684986, lon=4.631418, popup=popup2, color='gray'),
+          dict(name="Montestruq", lat=43.432742, lon=-0.809565, popup=popup3, color='gray')]
 
 cities_pd = pd.DataFrame.from_dict(cities)
 
 # Basemap
-m = folium.Map(location=[45.5236, 0], tiles='https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>', zoom_start=2.5)
+m = folium.Map(location=[45.5236, 0], tiles='https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>', zoom_start=5)
 
 # Create markers with popup
 for i in range(0,len(cities_pd)):
     folium.Marker(location=[cities_pd.iloc[i]['lat'], cities_pd.iloc[i]['lon']],
-       icon=folium.Icon(color = 'blue'),
+       icon=folium.Icon(color = cities_pd.iloc[i]['color'], icon='glyphicon-record'),
        tooltip=cities_pd.iloc[i]['name'], popup=cities_pd.iloc[i]['popup']).add_to(m)
 
 loc = '<br>Fantastic Urban Life Series'
