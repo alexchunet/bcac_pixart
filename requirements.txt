@@ -8,3 +8,4 @@ pillow
 requests
 gunicorn
 geopandas
+dash_bootstrap_components
