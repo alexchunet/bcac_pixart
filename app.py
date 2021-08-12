@@ -26,7 +26,7 @@ popup2 = folium.Popup(IFrame(html(pic2.decode('UTF-8')), width=200, height=200),
 popup3 = folium.Popup(IFrame(html(pic3.decode('UTF-8')), width=200, height=200), max_width=250)
 
 # Define stops
-cities = [dict(name="Paris - Ile de la cité", lat=48.8534, lon=2.3488, popup=popup1, color='gray'),
+cities = [dict(name="Paris - Ile de la cité", lat=48.8534, lon=2.3488, popup=popup1, color='red'),
           dict(name="Arles", lat=43.684986, lon=4.631418, popup=popup2, color='gray'),
           dict(name="Montestruq", lat=43.432742, lon=-0.809565, popup=popup3, color='gray')]
 
